@@ -15,6 +15,10 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+export { firebase, database as default };
+
+// REFERENCE CODE ARE BELOW
+
 // Setup Expenses Dummy
 // database.ref('expenses').push({
 //   description: 'Rent',
@@ -38,22 +42,22 @@ const database = firebase.database();
 // });
 
 // child_removed
-database.ref('expenses').on('child_removed', (snapshot) => {
-  console.log('child_removed');
-  console.log(snapshot.key, snapshot.val());
-})
+// database.ref('expenses').on('child_removed', (snapshot) => {
+//   console.log('child_removed');
+//   console.log(snapshot.key, snapshot.val());
+// })
 
-// child_changed
-database.ref('expenses').on('child_changed', (snapshot) => {
-  console.log('child_changed');
-  console.log(snapshot.key, snapshot.val());
-})
+// // child_changed
+// database.ref('expenses').on('child_changed', (snapshot) => {
+//   console.log('child_changed');
+//   console.log(snapshot.key, snapshot.val());
+// })
 
-// child_added
-database.ref('expenses').on('child_added', (snapshot) => {
-  console.log('child_added');
-  console.log(snapshot.key, snapshot.val());
-})
+// // child_added
+// database.ref('expenses').on('child_added', (snapshot) => {
+//   console.log('child_added');
+//   console.log(snapshot.key, snapshot.val());
+// })
 
 // const onValueChange = database.ref('expenses')
 //   .on('value' , (snapshot) => {
